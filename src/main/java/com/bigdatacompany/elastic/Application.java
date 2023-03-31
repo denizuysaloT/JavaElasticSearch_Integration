@@ -25,13 +25,15 @@ public class Application {
 
         Map<String, Object> json = new HashMap<>();
 
-        json.put("name","Asus Vivobook X542UR");
-        json.put("detail","Intel Core i5,8GB RAM,1TB Harddisk");
-        json.put("provider","Asus Türkiye");
+        json.put("name","Dell Inspiron 3585");
+        json.put("detail","Intel Core i3,4GB RAM,500GB Harddisk");
+        json.put("price","3500");
+        json.put("provider","Dell Türkiye");
 
-        IndexResponse indexResponse = client.prepareIndex("product", "_doc", "1")
+        IndexResponse indexResponse = client.prepareIndex("product", "_doc", "2")
                 .setSource(json, XContentType.JSON)
                 .get();
+        System.out.println(indexResponse.getId());
 
 
     }
